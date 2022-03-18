@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Street View split-map-panes</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script src="./index.js"></script>
+</head>
+
+<body>
+  <div id="pano">
+    <div class="row my-4">
+      <div class="col-12">
+        <h1>&nbsp&nbsp Where Me?</h1>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <form id="whereme-form">
+        <div class="form-group mb-8">
+          <label for="street">&nbsp&nbsp Street Address:</label>
+          <input id="street" name="street" class="form-control" type="text" required
+            placeholder="1600 Pennsylvania Avenue" />
+        </div>
+        <div class="form-group mb-4">
+          <label for="city">&nbsp&nbsp City:</label>
+          <input id="city" name="city" class="form-control" type="text" placeholder="N.W. Washington" required />
+        </div>
+        <div class="form-group mb-4">
+          <label for="state">&nbsp&nbsp State:</label>
+          <input id="state" name="state" class="form-control" type="text" placeholder="DC" required />
+        </div>
+        <div class="form-group mb-4">
+          <label for="zip">&nbsp&nbsp Zip Code:</label>
+          <input id="zip" name="zip" class="form-control" type="text" placeholder="20500" pattern="\d{5}" />
+        </div>
+        <div class="form-group mb-4">
+          &nbsp&nbsp<input id="submit" name="submit" class="btn btn-primary" type="submit" value="Find My Coordinates" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6rFZ0bkdbtSQ0YbShtQk-qSfLpkVIZfE&callback=initMap&v=weekly"
+    async></script>
+</body>
+
+</html>
